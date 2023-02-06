@@ -4,12 +4,12 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="Disassemble old project for parts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+                <mxCell id="2" value="Flash os onto new BeagleBone AI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
                     <mxGeometry x="30" y="260" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="" style="endArrow=none;html=1;fillColor=#008a00;strokeColor=#005700;" edge="1" parent="1">
+                <mxCell id="3" value="" style="endArrow=classic;html=1;fillColor=#008a00;strokeColor=#005700;strokeWidth=4;startArrow=classic;startFill=1;endFill=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="360" as="sourcePoint"/>
+                        <mxPoint x="10" y="360" as="sourcePoint"/>
                         <mxPoint x="800" y="360" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
@@ -17,6 +17,15 @@
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="99" y="360" as="sourcePoint"/>
                         <mxPoint x="490" y="360" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Disassemble old project for parts" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="endArrow=none;html=1;entryX=0.574;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="249" y="360" as="sourcePoint"/>
+                        <mxPoint x="640" y="360" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
