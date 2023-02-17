@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing pip..."
-sudo apt install pip3
+sudo apt install python3-pip
 echo "Done ^.^"
 
 echo "Installing DLIB deb packages..."
@@ -15,6 +15,6 @@ pip3 install scipy
 pip3 install imutils
 pip3 install numpy
 pip3 install dlib # Needs other packages
-pip3 install open-cv2
+pip3 install opencv-python
 echo "Yippee it's done!" 
 
