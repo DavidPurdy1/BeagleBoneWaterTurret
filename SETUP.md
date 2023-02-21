@@ -16,3 +16,7 @@ Now you probably want some internet right?
 So I setup the wifi dongle and used this for downloading everything. I used [](https://github.com/kelebek333/rtl8188fu) instructions for setting up the wifi drivers on the bone.
 
 I will add for installation of the wifi drivers. Let it go though while you have something else to do because it will take a min to compile.
+
+Finally got the camera working, the first camera I tried was not supported.
+
+Now running into issues with running a stepper motor. Was going to use the Adafruit BBIO library, but looks like there's no support for the beagle bone ai or 64. This makes it a little harder to do stepper, relay, and servo stuff.
