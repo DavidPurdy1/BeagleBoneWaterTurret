@@ -1,5 +1,5 @@
 # BeagleBone Ai-64 Setup instructions
-Here are some instructions for how I set up the beaglebone ai-64
+Here are some instructions for how we set up the beaglebone ai-64
 
 Install a graphical OS, makes it easier to debug later imo.
 

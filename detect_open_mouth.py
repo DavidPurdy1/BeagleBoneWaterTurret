@@ -65,7 +65,7 @@ def fire_relay():
     print("starting firing...")
     os.system(relay_fire_cmd)
     
-    time.sleep(5)
+    time.sleep(8)
     
     print("stopping firing...")
     os.system(relay_stop_fire_cmd)
@@ -110,16 +110,16 @@ def turn_off_stepper():
 def decide_to_shoot(x, y):
     print(x, y)
     # if the x is over a face then shoot, near the center
-    if 320 - 30 < x and x < 320 + 30:
-        # Adjust servo for y
-        # Assume a distance away from the camera
-        d = 5
-        angle = math.degrees(math.atan2(y, x-d))
-        print(angle)
-        set_angle(int(angle))
+    #if 320 - 30 < x and x < 320 + 30:
+    # Adjust servo for y
+    # Assume a distance away from the camera
+    d = 5
+    angle = math.degrees(math.atan2(y, x-d))
+    print(angle)
+    set_angle(int(angle+10))
 
-        # shoot
-        fire_relay()
+    # shoot
+    fire_relay()
 
 
 def mouth_aspect_ratio(mouth):
@@ -184,6 +184,7 @@ out = cv2.VideoWriter('outpy.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 30, (
 time.sleep(1.0)
 
 # loop over frames from the video stream
+print("It's good to go")
 while True:
     # grab the frame from the threaded video file stream, resize
     # it, and convert it to grayscale
@@ -216,8 +217,8 @@ while True:
         # visualize the mouth
         mouthHull = cv2.convexHull(mouth)
 
-        cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)
-        cv2.putText(frame, "MAR: {:.2f}".format(mar), (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+        #cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)
+        #cv2.putText(frame, "MAR: {:.2f}".format(mar), (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
         # Draw text if mouth is open
         if mar > MOUTH_AR_THRESH:
@@ -225,11 +226,11 @@ while True:
 
             # Send the mouth center to the peripherals so that it can calculate angle
             decide_to_shoot(centroid[0], centroid[1]) 
-            cv2.putText(frame, "Mouth is Open!", (30,60),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255),2)
+            #cv2.putText(frame, "Mouth is Open!", (30,60),
+            #        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,255),2)
 
     # show the frame
-    cv2.imshow("Frame", frame)
+    #cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
 
     # if the `q` key was pressed, break from the loop
@@ -238,5 +239,5 @@ while True:
 
 # do a bit of cleanup
 vs.release()
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
 vs.stop()
